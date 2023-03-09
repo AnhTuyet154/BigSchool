@@ -9,21 +9,33 @@ using System.Web.Mvc;
 
 namespace BigSchool.Controllers
 {
-    public class CoursesController : Controller { 
-
-
-    private readonly ApplicationDbContext _dbContext;
-    public CoursesController()
+    public class CoursesController : Controller
     {
-        _dbContext = new ApplicationDbContext();
-    }
-    
+
+
+        private readonly ApplicationDbContext _dbContext;
+        public CoursesController()
+        {
+            _dbContext = new ApplicationDbContext();
+        }
+
         // GET: Courses
         [Authorize]
-        
+        public ActionResult Create()
+        {
+            var viewModel = new CourseViewModel
+            {
+                Categories = _dbContext.Categories.ToList()
+            };
+            return View(viewModel);
+        }
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
         public ActionResult Create(CourseViewModel viewModel)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 viewModel.Categories = _dbContext.Categories.ToList();
                 return View("create", viewModel);
