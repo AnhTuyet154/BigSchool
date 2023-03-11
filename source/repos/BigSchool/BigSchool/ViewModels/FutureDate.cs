@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -12,12 +13,14 @@ namespace BigSchool.ViewModels
         public override bool IsValid(object value)
         {
             DateTime dateTime;
-            var IsValid = DateTime.TryParseExact(Convert.ToString(value),"dd/M/yyyy",
+            var isValid = DateTime.TryParseExact(Convert.ToString(value),
+                "dd/M/yyyy",
                 CultureInfo.CurrentCulture,
-                DateTimeStyles.None, 
+                DateTimeStyles.None,
                 out dateTime);
-            return (IsValid && dateTime > DateTime.Now);
+
+            return (isValid && dateTime > DateTime.Now);
         }
     }
-    
+        
 }

@@ -25,37 +25,51 @@ textarea {
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-    background-color: lightpink;
+    background-color: #d41d50;
     border-color: #fff
 }
 
-.navbar-inverse{
-    background-color: hotpink;
+.navbar-inverse {
+    background-color: #d41d50;
     border-color: #ffffff;
 }
-.navbar-inverse .navbar-nav > li > a{
-    color: white;
-}
-.navbar-inverse .navbar-brand{
-    color:white;
-}
 
-.course{
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: white;
+    }
+
+.course {
     list-style: none;
 }
-.course > li{
-    position: relative;
-    margin-bottom: 30px;
-}
-.course > li .date{
-    text-align: center;
-    background-color: #d41d50;
-    color: white;
-    width: 60px;
-    border-radius: 8px;
-}
-.course > li .details{
-    position: absolute;
-    top: 0;
-    left: 70px;
-}
+
+    .course > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+        .course > li .date {
+            text-align: center;
+            background-color: #d41d50;
+            color: white;
+            width: 60px;
+            border-radius: 8px;
+        }
+
+        .course > li .details {
+            position: absolute;
+            top: 0;
+            left: 70px;
+        }
+
+        .course > li .action{
+            display: none;
+            left: 70px;
+            position: absolute;
+        }
+        .course > li:hover .action{
+            display: block;
+        }
