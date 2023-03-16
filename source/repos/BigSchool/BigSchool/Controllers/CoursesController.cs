@@ -110,6 +110,7 @@ namespace BigSchool.Controllers
         public ActionResult Update(CourseViewModel viewModel)
         {
 
+
             if (!ModelState.IsValid)
             {
                 viewModel.Categories = _dbContext.Categories.ToList();
